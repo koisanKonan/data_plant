@@ -439,9 +439,9 @@ elif selector=="折れ線グラフ":
                 s_num = sei_num.iloc[i]
                 gura_num=gura_num.append(s_num)
            
+            st.write("--------------------------")
             gura_num=gura_num.sort_values(["工程時間"])
             st.dataframe(gura_num)
-            st.write("--------------------------")
             fig = go.Figure(px.line(gura_num, x="工程時間", y="工程コード", markers=True))
             fig.update_yaxes(autorange='reversed')
             st.plotly_chart(fig)
